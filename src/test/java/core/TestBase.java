@@ -41,6 +41,7 @@ public class TestBase {
         Configuration.browserSize      = "1920x1080";
         Configuration.browser          = System.getProperty("browser");
         Configuration.timeout          = 10000;
+        Configuration.headless         = true;
         driver = new SelenideDriver(new SelenideConfig()
                 .browserSize(Configuration.browserSize)
                 .holdBrowserOpen(Configuration.holdBrowserOpen)

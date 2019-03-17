@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 class Login extends TestBase {
     @Test
     void vkBo() {
-        open("https://joinrpg.ru/account/login");
+        open("https://dev.joinrpg.ru/account/login");
         $("#VKontakte").click();
         $(byLinkText("Мои заявки")).isDisplayed();
     }
