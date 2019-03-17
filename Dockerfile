@@ -1,4 +1,4 @@
 FROM elgalu/selenium
-RUN sudo apt install -y openjdk-8-jdk
+RUN apt install -y openjdk-8-jdk
 WORKDIR /home/seluser/join-tests
 RUN ./gradlew
