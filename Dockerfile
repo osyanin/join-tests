@@ -1,1 +1,1 @@
-FROM ogion/firstandonly:probe
+FROM ogion/join-tests:latest

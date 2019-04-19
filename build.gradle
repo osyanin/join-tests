@@ -16,6 +16,7 @@ ext {
     restAssuredVersion = '3.3.0'
     wiremockVersion = '2.21.0'
 }
+
 defaultTasks 'clean', 'test'
 
 compileTestJava {
