@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: ogion/firstandonly:probe
+      - image: ogion/join-tests:latest
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
