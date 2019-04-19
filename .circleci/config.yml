@@ -24,5 +24,7 @@ jobs:
       - checkout
       # run tests!
       - run: pwd
-      - run: ls
+      - run: ls -lah
       - run: ./gradlew
+      - store_test_results:
+          path: build/reports/allure-reports
