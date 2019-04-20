@@ -9,12 +9,14 @@ plugins {
 }
 ext {
     allureVersion = '2.10.0'
-    selenideVersion = '5.2.1'
+    selenideVersion = '5.2.2'
     junitJupiterVersion = '5.4.0'
     log4jVersion = '1.2.17'
     slf4jVersion = '1.7.25'
     restAssuredVersion = '3.3.0'
-    wiremockVersion = '2.21.0'
+    wiremockVersion = '2.23.2'
+    gatlingVersion = '3.1.1'
+    scalaLangVersion = '2.12.8'
 }
 
 defaultTasks 'clean', 'test'
@@ -59,7 +61,7 @@ dependencies {
 allure {
     autoconfigure = true
     //version = '2.7.0'  // Latest Allure Version
-    version = "$allureVersion"
+    version = allureVersion
     //reportDir = file('/opt/autotest/allure-results')
     useJUnit5 {
         //version = '2.7.0' // Latest Allure Version
@@ -81,8 +83,8 @@ testlogger {
 
 gatling {
     simulations = ['Probe']
-    toolVersion = "3.0.3"
-    scalaVersion = "2.12.8"
+    toolVersion = gatlingVersion
+    scalaVersion = scalaLangVersion
 }
 
 test {
