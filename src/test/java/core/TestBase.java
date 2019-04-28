@@ -54,9 +54,6 @@ public class TestBase {
         System.setProperty("firefoxprofile.permissions.default.camera", "1");
         System.setProperty("firefoxprofile.browser.cache.disk.enable", "false");
 
-        String CHROME_OPTIONS_ARGS = "chromeoptions.args";
-        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips");
-
         wireMockServer.start();
         wireMockServer.stubFor(post(anyUrl())
                 .willReturn(aResponse()
