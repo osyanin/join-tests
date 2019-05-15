@@ -22,6 +22,10 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 
 public class TestBase {
+
+    private static final String CHROME_OPTIONS_PREFS = "chromeoptions.prefs";
+    private static final String CHROME_OPTIONS_ARGS = "chromeoptions.args";
+
     static public String URL;
 
     protected static Logger logger = LoggerFactory.getLogger(TestBase.class);
@@ -31,6 +35,9 @@ public class TestBase {
 
     @BeforeAll
     public static void setUp() throws IOException {
+
+        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips");
+
         /*Properties p = new Properties();
         p.load(new FileInputStream("conf/" + System.getProperty("environment") + ".properties"));
         URL                            = p.getProperty("url");*/
