@@ -9,7 +9,7 @@ plugins {
 }
 ext {
     allureVersion = '2.10.0'
-    selenideVersion = '5.2.3'
+    selenideVersion = '5.2.2'
     junitJupiterVersion = '5.4.0'
     log4jVersion = '1.2.17'
     slf4jVersion = '1.7.25'
