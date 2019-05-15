@@ -25,7 +25,7 @@ jobs:
       # run tests!
       - run: pwd
       - run: ls -lah
-      - run: ./gradlew --info
+      - run: ./gradlew --stacktrace
       - run: chromedriver --whitelisted-ips=
       - store_test_results:
           path: build/reports/allure-reports
