@@ -36,7 +36,7 @@ public class TestBase {
     @BeforeAll
     public static void setUp() throws IOException {
 
-        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips");
+        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips=");
 
         /*Properties p = new Properties();
         p.load(new FileInputStream("conf/" + System.getProperty("environment") + ".properties"));
