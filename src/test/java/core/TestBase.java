@@ -12,6 +12,8 @@ import io.restassured.RestAssured;
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,11 +34,15 @@ public class TestBase {
 
     private static WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
     protected static SelenideDriver driver;
+    protected static ChromeDriver cdriver;
 
     @BeforeAll
     public static void setUp() throws IOException {
 
-        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips=");
+        //System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
+        cdriver = new ChromeDriver(options);
 
         /*Properties p = new Properties();
         p.load(new FileInputStream("conf/" + System.getProperty("environment") + ".properties"));
