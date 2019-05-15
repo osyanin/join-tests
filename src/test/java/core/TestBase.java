@@ -39,10 +39,11 @@ public class TestBase {
     @BeforeAll
     public static void setUp() throws IOException {
 
-        //System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
-        ChromeOptions options = new ChromeOptions();
+        System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
+
+        /*ChromeOptions options = new ChromeOptions();
         options.addArguments("--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
-        cdriver = new ChromeDriver(options);
+        cdriver = new ChromeDriver(options);*/
 
         /*Properties p = new Properties();
         p.load(new FileInputStream("conf/" + System.getProperty("environment") + ".properties"));
