@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: jimador/docker-jdk-8-maven-node:latest
+      - image: circleci/openjdk:latest
       #- image: selenium/standalone-chrome-debug:latest
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -26,6 +26,6 @@ jobs:
       - checkout
       # run tests!
       - run: ./gradlew --stacktrace
-      - run: chromedriver --whitelisted-ips=
+      #- run: chromedriver --whitelisted-ips=
       - store_test_results:
           path: build/reports/allure-reports
