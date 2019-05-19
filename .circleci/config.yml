@@ -21,10 +21,10 @@ jobs:
       JVM_OPTS: -Xmx3200m
 
     steps:
-      - checkout
-      # run tests!
       - run: pwd
       - run: ls -lah
+      - checkout
+      # run tests!
       - run: ./gradlew --stacktrace
       - run: chromedriver --whitelisted-ips=
       - store_test_results:
