@@ -7,8 +7,8 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: selenium/standalone-chrome:latest
-      #- image: selenium/standalone-chrome-debug:latest
+      #- image: jimador/docker-jdk-8-maven-node:latest
+      - image: selenium/standalone-chrome-debug:latest
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
