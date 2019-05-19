@@ -8,13 +8,13 @@ jobs:
     docker:
       # specify the version you desire here
       - image: selenium/standalone-chrome:latest
-
+      #- image: selenium/standalone-chrome-debug:latest
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: /home/test/projects/join-tests
+    working_directory: /home/
 
     environment:
       # Customize the JVM maximum heap limit
