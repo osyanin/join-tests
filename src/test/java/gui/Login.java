@@ -9,9 +9,16 @@ import static com.codeborne.selenide.Selenide.open;
 
 class Login extends TestBase {
     @Test
-    void vkBo() {
+    void vkBoNegative() {
         open("https://dev.joinrpg.ru/account/login");
         $("#VKontakte1").click();
+        //$(byLinkText("Мои заявки")).isDisplayed();
+    }
+
+    @Test
+    void vkBo() {
+        open("https://dev.joinrpg.ru/account/login");
+        $("#VKontakte").click();
         //$(byLinkText("Мои заявки")).isDisplayed();
     }
 }
