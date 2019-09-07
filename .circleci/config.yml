@@ -21,11 +21,14 @@ jobs:
       JVM_OPTS: -Xmx3200m
 
     steps:
-      - run: pwd
-      - run: ls -lah
+      - run:
+         command: pwd
+      - run:
+          command: ls -lah
       - checkout
       # run tests!
-      - run: ./gradlew --stacktrace
+      - run:
+         command: ./gradlew
       #- run: chromedriver --whitelisted-ips=
       - store_test_results:
           path: build/reports/allure-reports
