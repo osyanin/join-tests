@@ -1,3 +1,6 @@
 #FROM ogion/join-tests:latest
 #{ "ipv6" : true }
-FROM selenium/standalone-chrome
+FROM ogion/firstandonly:latest
+WORKDIR /home/seluser/join-tests
+
+

@@ -1,7 +1,7 @@
-join-tests:
+firstandonly:
         build: ./
-        volumes: 
+        volumes:
          - ./:/home/seluser/join-tests
 
         stdin_open: true
-        container_name: join-tests
+        container_name: firstandonly
