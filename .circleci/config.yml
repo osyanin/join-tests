@@ -6,13 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      #- image: circleci/openjdk:latest
       - image: ogion/firstandonly:latest
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
 
     working_directory: /home/seluser/join-tests
 
@@ -21,14 +15,7 @@ jobs:
       JVM_OPTS: -Xmx3200m
 
     steps:
-      - run:
-         command: pwd
-      - run:
-          command: ls -lah
       - checkout
-      # run tests!
-      - run:
-         command: ./gradlew
-      #- run: chromedriver --whitelisted-ips=
+      - run: ./gradlew
       - store_test_results:
           path: build/reports/allure-reports
