@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: ogion/firstandonly:latest
 
-    working_directory: /home/seluser/join-tests
+    working_directory: /home/seluser/
 
     environment:
       # Customize the JVM maximum heap limit
@@ -16,6 +16,7 @@ jobs:
 
     steps:
       - checkout
+      - run: cd ./join-tests
       - run: ./gradlew
       - store_test_results:
           path: build/reports/allure-reports
