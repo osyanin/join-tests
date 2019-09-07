@@ -41,14 +41,6 @@ public class TestBase {
 
         System.setProperty(CHROME_OPTIONS_ARGS, "--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
 
-        /*ChromeOptions options = new ChromeOptions();
-        options.addArguments("--whitelisted-ips\", \"--no-sandbox\", \"--disable-extensions\"");
-        cdriver = new ChromeDriver(options);*/
-
-        /*Properties p = new Properties();
-        p.load(new FileInputStream("conf/" + System.getProperty("environment") + ".properties"));
-        URL                            = p.getProperty("url");*/
-
         RestAssured.baseURI            = URL;
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         Configuration.baseUrl          = URL;
