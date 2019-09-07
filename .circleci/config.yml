@@ -18,4 +18,4 @@ jobs:
       - checkout
       - run: ./gradlew
       - store_test_results:
-          path: build/reports/allure-report/data/test-cases/
+          path: build/test-results/
