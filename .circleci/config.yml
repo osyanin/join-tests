@@ -16,7 +16,6 @@ jobs:
 
     steps:
       - checkout
-      - run: cd ./join-tests
       - run: ./gradlew
       - store_test_results:
           path: build/reports/allure-reports
