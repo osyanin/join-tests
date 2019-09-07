@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: ogion/firstandonly:latest
 
-    working_directory: /home/seluser/
+    working_directory: /home/seluser/join-tests
 
     environment:
       # Customize the JVM maximum heap limit
