@@ -11,7 +11,7 @@ class Login extends TestBase {
     @Test
     void vkBo() {
         open("https://dev.joinrpg.ru/account/login");
-        $("#VKontakte").click();
+        $("#VKontakte1").click();
         //$(byLinkText("Мои заявки")).isDisplayed();
     }
 }
