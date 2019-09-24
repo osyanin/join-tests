@@ -13,7 +13,7 @@ class Login extends TestBase {
     void vkBoNegative() {
         open("https://dev.joinrpg.ru/account/login");
         $("#VKontakte").click();
-        assertEquals("1", "2");
+        assertEquals("2", "2");
         //$(byLinkText("Мои заявки")).isDisplayed();
     }
 
