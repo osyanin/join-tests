@@ -2,19 +2,20 @@ plugins {
     id 'java'
     id 'scala'
     id 'idea'
-    id "com.github.ben-manes.versions" version "0.24.0"
-    id 'com.adarshr.test-logger' version '1.7.0'
+    id "com.github.ben-manes.versions" version "0.27.0"
+    id 'com.adarshr.test-logger' version '2.0.0'
     id 'io.qameta.allure' version '2.8.1'
     id "com.github.lkishalmi.gatling" version "3.2.8"
 }
+
 ext {
-    allureVersion = '2.12.1'
-    selenideVersion = '5.3.0'
-    junitJupiterVersion = '5.5.1'
+    allureVersion = '2.13.0'
+    selenideVersion = '5.5.0'
+    junitJupiterVersion = '5.5.2'
     log4jVersion = '1.2.17'
     slf4jVersion = '1.7.25'
-    restAssuredVersion = '4.1.1'
-    wiremockVersion = '2.24.1'
+    restAssuredVersion = '4.1.2'
+    wiremockVersion = '2.25.1'
 }
 defaultTasks 'clean', 'test'
 
@@ -32,10 +33,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.platform:junit-platform-launcher:1.5.1")
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitJupiterVersion
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitJupiterVersion
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: junitJupiterVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-platform-launcher', version: '1.5.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitJupiterVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitJupiterVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: junitJupiterVersion
 
     testCompile group: 'com.codeborne', name: 'selenide', version: selenideVersion
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: restAssuredVersion
@@ -44,26 +45,26 @@ dependencies {
     testCompile group: 'io.qameta.allure', name: 'allure-selenide', version: allureVersion
     testCompile group: 'io.qameta.allure', name: 'allure-rest-assured', version: allureVersion
     testCompile group: 'io.qameta.allure', name: 'allure-junit-platform', version: allureVersion
+    testCompile group: 'io.qameta.allure', name: 'allure-attachments', version: allureVersion
+    testCompile group: 'io.qameta.allure', name: 'allure-jira-commons', version: allureVersion
+    testCompile group: 'io.qameta.allure.plugins', name: 'jira-plugin', version: allureVersion
+
+    testCompile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
 
     testCompile group: 'org.slf4j', name: 'slf4j-jdk14', version: slf4jVersion
-    testCompile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.62'
+    testCompile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.64'
 
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: restAssuredVersion
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
     compile group: 'com.github.tomakehurst', name: 'wiremock', version: wiremockVersion
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.13.0'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.13.1'
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.4'
 }
 
 allure {
-    autoconfigure = true
     version = allureVersion
-    //reportDir = file('/opt/autotest/allure-results')
-    useJUnit5 {
-    }
+    useJUnit5 {}
 }
-
-//test.finalizedBy(allureReport)
-
 
 testlogger {
     theme 'mocha-parallel'
@@ -80,15 +81,12 @@ testlogger {
 
 gatling {
     simulations = ['Probe']
-    toolVersion = "3.2.1"
-    scalaVersion = "2.13.0"
 }
 
-test {
+tasks.withType(Test) {
     reports.html.enabled = false
     systemProperties = System.properties
     maxParallelForks = Runtime.runtime.availableProcessors() / 2
     finalizedBy("allureReport")
-    useJUnitPlatform {
-    }
+    useJUnitPlatform {}
 }

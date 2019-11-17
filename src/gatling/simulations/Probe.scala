@@ -3,8 +3,7 @@ import io.gatling.http.Predef._
 
 class Probe extends Simulation{
 
-  //val httpConf = http.baseUrl("https://revo.ru/client_cabinet/hs?api_key=MX8VXuuudchJULWFMgV72KjEZe3UT4BH")
-  val httpConf = http.baseUrl("https://joinrpg.ru/account/login")
+  val httpConf = http.baseUrl("https://eosdt.com")
 
   val scn = scenario("Basic Simulation")
     .exec(http("request_1")
