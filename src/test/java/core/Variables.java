@@ -15,12 +15,6 @@ public class Variables {
     private final String generatedCyrillicLowerCase = new RandomGenerated().cyryllicLowerCase(9);
     protected final String generatedPhoneNumber = new RandomGenerated().phoneNumber888();
     protected final String generatedPassportNumber = new RandomGenerated().number(6);
-    
-    
-    protected static String user;
-    protected static String password;
-    protected static String master;
-    protected static String masterPassword;
 
     protected static String newUser             = generated.stringValue(8);
     protected static String newUserMail         = generated.stringValue(8).toLowerCase() + "@grr.la";
@@ -29,6 +23,9 @@ public class Variables {
     protected static String newMaster           = generated.stringValue(10);
     protected static String newMasterMail       = generated.stringValue(10).toLowerCase() + "@grr.la";
     protected static String newMasterPassword   = generated.stringValue(20);
+
+    protected static String newGameName  = "ПРИ_" + generated.cyryllicUpperCase(8);
+    protected static String newConventName  = generated.cyryllicUpperCase(8) + "_кон";
     protected static SelenideDriver driver;
 
     

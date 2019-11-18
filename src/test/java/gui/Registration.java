@@ -15,11 +15,19 @@ class Registration extends TestBase{
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
         RegistrationSuccessPage registrationSuccessPage = reg.newUser(newUserMail, newUserPassword);
         registrationSuccessPage.registrationSuccessCaption().should(exist);
+
     }
 
     @Test
     void notAcceptedAgreement() {
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
         reg.notAcceptedAgreementUser(newUserMail, newUserPassword).notAcceptedAgreementMessage().should(exist);
+    }
+
+    @Test
+    void notEnteredMailAndPassword() {
+        RegistrationPage reg = open("/account/register", RegistrationPage.class);
+        reg.notEnteredMailAndPasswordUser().noEmailMessage().should(exist);
+        reg.noPasswordMessage().should(exist);
     }
 }

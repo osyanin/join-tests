@@ -8,10 +8,16 @@ import org.slf4j.LoggerFactory;
 class PropertyLoader extends Variables{
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     String url;
+    String user;
+    String password;
+    String master;
     
     PropertyLoader() 
     {
         url = loader().getProperty("url");
+        user = loader().getProperty("user");
+        master = loader().getProperty("master");
+        password = loader().getProperty("password");
     }
     
     private Properties loader() {
