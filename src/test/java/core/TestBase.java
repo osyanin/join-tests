@@ -21,8 +21,8 @@ public class TestBase extends Variables{
         Configuration.browserSize      = "1920x1080";
         Configuration.browser          = System.getProperty("browser");
         Configuration.timeout          = 4000;
-        Configuration.headless         = false;
-        Configuration.holdBrowserOpen  = true;
+        Configuration.headless         = true;
+        Configuration.holdBrowserOpen  = false;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
