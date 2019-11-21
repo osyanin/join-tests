@@ -1,11 +1,10 @@
-package ru.joinrpg.tests.gui;
+package ru.joinrpg.uitests.tests;
 
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
-import ru.joinrpg.tests.core.TestBase;
-import ru.joinrpg.tests.core.utils.login.LoginPage;
-import ru.joinrpg.tests.core.utils.main.GameCreationPage;
-import ru.joinrpg.tests.core.utils.project.MainProjectPage;
+import ru.joinrpg.uitests.models.login.LoginPage;
+import ru.joinrpg.uitests.models.main.GameCreationPage;
+import ru.joinrpg.uitests.models.project.MainProjectPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;

@@ -1,4 +1,4 @@
-package ru.joinrpg.tests.core.utils.project;
+package ru.joinrpg.uitests.models.project;
 
 import com.codeborne.selenide.SelenideElement;
 

@@ -1,4 +1,4 @@
-package ru.joinrpg.tests.core;
+package ru.joinrpg.uitests.conf;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -8,10 +8,10 @@ import org.slf4j.LoggerFactory;
 public class SiteConnection {
     private static Logger logger = LoggerFactory.getLogger(SiteConnection.class);
 
-    String url;
-    String user;
-    String password;
-    String master;
+    public String url;
+    public String user;
+    public String password;
+    public String master;
 
     private static Properties loadProperties() {
         Properties p = new Properties();

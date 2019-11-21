@@ -1,4 +1,4 @@
-package ru.joinrpg.tests.core;
+package ru.joinrpg.uitests.util;
 
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -10,7 +10,7 @@ public class RandomGenerated {
     private Random rnd = new Random();
     private StringBuilder salt = new StringBuilder();
 
-    String stringValue(int length) {
+    public String stringValue(int length) {
         {
             while (salt.length() < length) {
                 String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -21,7 +21,7 @@ public class RandomGenerated {
         return salt.toString();
     }
 
-    String cyryllicUpperCase(int length) {
+    public String cyryllicUpperCase(int length) {
         {
             while (salt.length() < length) {
                 String SALTCHARS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ";
@@ -32,7 +32,7 @@ public class RandomGenerated {
         return salt.toString();
     }
 
-    String cyryllicLowerCase(int length) {
+    public String cyryllicLowerCase(int length) {
         {
             while (salt.length() < length) {
                 String SALTCHARS = "абвгдеёжзийклмнопрстуфхцчшщыэюя";
@@ -44,7 +44,7 @@ public class RandomGenerated {
     }
 
 
-    String phoneNumber888() {
+    public String phoneNumber888() {
         int length = 5;
         {
             while (salt.length() < length) {
@@ -68,7 +68,7 @@ public class RandomGenerated {
         return "9" + salt.toString();
     }
 
-    String number(int length) {
+    public String number(int length) {
         {
             while (salt.length() < length) {
                 String SALTCHARS = "1234567890";
@@ -79,15 +79,14 @@ public class RandomGenerated {
         return salt.toString();
     }
 
-    public static String getPassword(int length) {
+    public String getPassword(int length) {
 
         final int MIN_LENGTH = 8;
         final int MAX_LENGTH = 12;
 
-        Random generator = new Random();
         if (length == 0) {
             length = MIN_LENGTH
-                    + generator.nextInt(MAX_LENGTH - MIN_LENGTH);
+                    + rnd.nextInt(MAX_LENGTH - MIN_LENGTH);
         }
         int individualLength = Math.round(((float) length) / 3);
         int symbolLength = length - (2 * individualLength);

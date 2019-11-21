@@ -1,8 +1,10 @@
-package ru.joinrpg.tests.core;
+package ru.joinrpg.uitests.conf;
+
+import ru.joinrpg.uitests.util.RandomGenerated;
 
 import java.io.File;
 
-public class Variables {
+public class SiteVariables {
     public File rabbitJpg;
     public File rabbitPdf;
 
@@ -22,9 +24,9 @@ public class Variables {
     public String newGameName;
     public String newConventName;
 
-    public static Variables generate() {
+    public static SiteVariables generate() {
         RandomGenerated generated = new RandomGenerated();
-        Variables vars = new Variables();
+        SiteVariables vars = new SiteVariables();
 
         vars.rabbitJpg = new File("src/test/resources/rabbit.jpg");
         vars.rabbitPdf = new File("src/test/resources/rabbit.pdf");
