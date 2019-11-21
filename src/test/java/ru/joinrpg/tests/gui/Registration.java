@@ -1,8 +1,8 @@
-package gui;
+package ru.joinrpg.tests.gui;
 
-import core.TestBase;
-import core.utils.reg.RegistrationPage;
-import core.utils.reg.RegistrationSuccessPage;
+import ru.joinrpg.tests.core.TestBase;
+import ru.joinrpg.tests.core.utils.reg.RegistrationPage;
+import ru.joinrpg.tests.core.utils.reg.RegistrationSuccessPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
@@ -13,7 +13,7 @@ class Registration extends TestBase{
     @Test
     void positive() {
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
-        RegistrationSuccessPage registrationSuccessPage = reg.newUser(newUserMail, newUserPassword);
+        RegistrationSuccessPage registrationSuccessPage = reg.newUser(vars.newUserMail, vars.newUserPassword);
         registrationSuccessPage.registrationSuccessCaption().should(exist);
 
     }
@@ -21,7 +21,7 @@ class Registration extends TestBase{
     @Test
     void notAcceptedAgreement() {
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
-        reg.notAcceptedAgreementUser(newUserMail, newUserPassword).notAcceptedAgreementMessage().should(exist);
+        reg.notAcceptedAgreementUser(vars.newUserMail, vars.newUserPassword).notAcceptedAgreementMessage().should(exist);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package core.utils;
+package ru.joinrpg.tests.core.utils;
 
 public class User {
 

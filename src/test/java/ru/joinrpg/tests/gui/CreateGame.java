@@ -1,9 +1,9 @@
-package gui;
+package ru.joinrpg.tests.gui;
 
-import core.TestBase;
-import core.utils.login.LoginPage;
-import core.utils.main.GameCreationPage;
-import core.utils.project.MainProjectPage;
+import ru.joinrpg.tests.core.TestBase;
+import ru.joinrpg.tests.core.utils.login.LoginPage;
+import ru.joinrpg.tests.core.utils.main.GameCreationPage;
+import ru.joinrpg.tests.core.utils.project.MainProjectPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
@@ -16,7 +16,7 @@ class CreateGame extends TestBase {
                 .authorize(master.mail, master.password)
                 .newProject();
 
-        MainProjectPage mainProjectPage = gameCreationPage.createRPG(newGameName);
+        MainProjectPage mainProjectPage = gameCreationPage.createRPG(vars.newGameName);
         mainProjectPage.projectActiveCaption().isDisplayed();
         mainProjectPage.claimsAcceptingIsClosedCaption().isDisplayed();
         //TODO by master: add roles, configure fields, open claims, apply claim, add comment, reject claim.

@@ -1,12 +1,11 @@
-package core.utils.project;
+package ru.joinrpg.tests.core.utils.project;
 
 import com.codeborne.selenide.SelenideElement;
-import core.TestBase;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainProjectPage extends TestBase {
+public class MainProjectPage {
 
     public SelenideElement projectActiveCaption() {
         return $(byText("Проект активен"));

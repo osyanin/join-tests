@@ -1,7 +1,7 @@
-package core.utils.main;
+package ru.joinrpg.tests.core.utils.main;
 
 import com.codeborne.selenide.SelenideElement;
-import core.utils.project.MainProjectPage;
+import ru.joinrpg.tests.core.utils.project.MainProjectPage;
 
 import static com.codeborne.selenide.Condition.checked;
 import static com.codeborne.selenide.Condition.text;

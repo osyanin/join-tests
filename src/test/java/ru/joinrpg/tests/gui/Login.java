@@ -1,7 +1,7 @@
-package gui;
+package ru.joinrpg.tests.gui;
 
-import core.TestBase;
-import core.utils.login.LoginPage;
+import ru.joinrpg.tests.core.TestBase;
+import ru.joinrpg.tests.core.utils.login.LoginPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;

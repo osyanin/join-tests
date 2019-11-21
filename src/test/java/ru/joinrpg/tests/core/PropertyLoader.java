@@ -1,11 +1,11 @@
-package core;
+package ru.joinrpg.tests.core;
 
 import java.io.FileInputStream;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-class PropertyLoader extends Variables{
+public class PropertyLoader {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     String url;
     String user;

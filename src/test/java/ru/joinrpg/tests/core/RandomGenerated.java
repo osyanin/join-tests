@@ -1,4 +1,4 @@
-package core;
+package ru.joinrpg.tests.core;
 
 
 import org.apache.commons.lang3.RandomStringUtils;

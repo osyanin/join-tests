@@ -1,7 +1,6 @@
-package core.utils.reg;
+package ru.joinrpg.tests.core.utils.reg;
 
 import com.codeborne.selenide.SelenideElement;
-import core.TestBase;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -9,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
-public class RegistrationPage extends TestBase {
+public class RegistrationPage {
 
     public RegistrationSuccessPage newUser(String mail, String password) {
         enterEmail(mail).is(text(mail));
