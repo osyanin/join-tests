@@ -1,15 +1,14 @@
-package core.utils.login;
+package ru.joinrpg.uitests.models.login;
 
 import com.codeborne.selenide.SelenideElement;
-import core.TestBase;
-import core.utils.main.MainPage;
+import ru.joinrpg.uitests.models.main.MainPage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
-public class LoginPage extends TestBase {
+public class LoginPage {
     public LoginPage inputValues(String email, String password) {
         enterMail(email).is(text(email));
         enterPassword(password).is(not(empty));

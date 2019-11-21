@@ -1,4 +1,4 @@
-package core.utils.main;
+package ru.joinrpg.uitests.models.main;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;

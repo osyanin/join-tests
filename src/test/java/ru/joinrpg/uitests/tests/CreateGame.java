@@ -1,22 +1,25 @@
-package gui;
+package ru.joinrpg.uitests.tests;
 
-import core.TestBase;
-import core.utils.login.LoginPage;
-import core.utils.main.GameCreationPage;
-import core.utils.project.MainProjectPage;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
+import ru.joinrpg.uitests.models.login.LoginPage;
+import ru.joinrpg.uitests.models.main.GameCreationPage;
+import ru.joinrpg.uitests.models.project.MainProjectPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.open;
 
 class CreateGame extends TestBase {
+    private static Logger logger = LoggerFactory.getLogger(CreateGame.class);
+
     @Test
     void positiveEndToEnd() {
         GameCreationPage gameCreationPage = open("/account/login", LoginPage.class)
-                .authorize(master.mail, master.password)
+                .authorize(master.getMail(), master.getPassword())
                 .newProject();
 
-        MainProjectPage mainProjectPage = gameCreationPage.createRPG(newGameName);
+        MainProjectPage mainProjectPage = gameCreationPage.createRPG(vars.getNewGameName());
         mainProjectPage.projectActiveCaption().isDisplayed();
         mainProjectPage.claimsAcceptingIsClosedCaption().isDisplayed();
         //TODO by master: add roles, configure fields, open claims, apply claim, add comment, reject claim.
@@ -26,7 +29,7 @@ class CreateGame extends TestBase {
     @Test
     void fromMainPageToGameCreationPage() {
         open("/account/login", LoginPage.class)
-                .authorize(master.mail, master.password)
+                .authorize(master.getMail(), master.getPassword())
                 .newProject()
                 .gameCreationCaption().is(exist);
     }

@@ -1,23 +1,24 @@
-package core;
+package ru.joinrpg.uitests.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import core.utils.User;
+import ru.joinrpg.uitests.conf.SiteConnection;
+import ru.joinrpg.uitests.conf.SiteVariables;
+import ru.joinrpg.uitests.models.User;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class TestBase extends Variables{
-    protected Logger logger = LoggerFactory.getLogger(this.getClass());
-    private static PropertyLoader conf = new PropertyLoader();
-    protected static User user = new User(conf.user, conf.password);
-    protected static User master = new User(conf.master, conf.password);
-    
+public class TestBase {
+    protected static final SiteConnection siteConnection = SiteConnection.load();
+    protected static final User user = new User(siteConnection.getUser(), siteConnection.getPassword());
+    protected static final User master = new User(siteConnection.getMaster(), siteConnection.getPassword());
+
+    protected final SiteVariables vars = SiteVariables.generate();
+
     @BeforeAll
     public static void setUp() {
 
-        Configuration.baseUrl          = conf.url;
+        Configuration.baseUrl          = siteConnection.getUrl();
         Configuration.browserSize      = "1920x1080";
         Configuration.browser          = System.getProperty("browser");
         Configuration.timeout          = 4000;
