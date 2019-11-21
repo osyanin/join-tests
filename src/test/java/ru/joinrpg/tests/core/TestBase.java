@@ -13,7 +13,7 @@ public class TestBase {
     protected static PropertyLoader conf = new PropertyLoader();
     protected static User user = new User(conf.user, conf.password);
     protected static User master = new User(conf.master, conf.password);
-    protected static Variables vars = new Variables();
+    protected Variables vars = Variables.generate();
 
     @BeforeAll
     public static void setUp() {
