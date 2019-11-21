@@ -8,10 +8,10 @@ import org.slf4j.LoggerFactory;
 public class SiteConnection {
     private static Logger logger = LoggerFactory.getLogger(SiteConnection.class);
 
-    public String url;
-    public String user;
-    public String password;
-    public String master;
+    private String url;
+    private String user;
+    private String password;
+    private String master;
 
     private static Properties loadProperties() {
         Properties p = new Properties();
@@ -33,5 +33,37 @@ public class SiteConnection {
         conn.password = props.getProperty("password");
 
         return conn;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMaster() {
+        return master;
+    }
+
+    public void setMaster(String master) {
+        this.master = master;
     }
 }

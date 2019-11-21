@@ -15,7 +15,7 @@ class Registration extends TestBase{
     @Test
     void positive() {
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
-        RegistrationSuccessPage registrationSuccessPage = reg.newUser(vars.newUserMail, vars.newUserPassword);
+        RegistrationSuccessPage registrationSuccessPage = reg.newUser(vars.getNewUserMail(), vars.getNewUserPassword());
         registrationSuccessPage.registrationSuccessCaption().should(exist);
 
     }
@@ -23,7 +23,7 @@ class Registration extends TestBase{
     @Test
     void notAcceptedAgreement() {
         RegistrationPage reg = open("/account/register", RegistrationPage.class);
-        reg.notAcceptedAgreementUser(vars.newUserMail, vars.newUserPassword).notAcceptedAgreementMessage().should(exist);
+        reg.notAcceptedAgreementUser(vars.getNewUserMail(), vars.getNewUserPassword()).notAcceptedAgreementMessage().should(exist);
     }
 
     @Test

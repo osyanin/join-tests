@@ -16,10 +16,10 @@ class CreateGame extends TestBase {
     @Test
     void positiveEndToEnd() {
         GameCreationPage gameCreationPage = open("/account/login", LoginPage.class)
-                .authorize(master.mail, master.password)
+                .authorize(master.getMail(), master.getPassword())
                 .newProject();
 
-        MainProjectPage mainProjectPage = gameCreationPage.createRPG(vars.newGameName);
+        MainProjectPage mainProjectPage = gameCreationPage.createRPG(vars.getNewGameName());
         mainProjectPage.projectActiveCaption().isDisplayed();
         mainProjectPage.claimsAcceptingIsClosedCaption().isDisplayed();
         //TODO by master: add roles, configure fields, open claims, apply claim, add comment, reject claim.
@@ -29,7 +29,7 @@ class CreateGame extends TestBase {
     @Test
     void fromMainPageToGameCreationPage() {
         open("/account/login", LoginPage.class)
-                .authorize(master.mail, master.password)
+                .authorize(master.getMail(), master.getPassword())
                 .newProject()
                 .gameCreationCaption().is(exist);
     }

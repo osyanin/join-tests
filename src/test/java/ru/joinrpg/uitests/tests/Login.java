@@ -13,7 +13,6 @@ class Login extends TestBase {
     @Test
     void positive() {
         LoginPage loginPage = open("/account/login", LoginPage.class);
-        loginPage.inputValues(master.mail, master.password).pressLogIn();
-
+        loginPage.inputValues(master.getMail(), master.getPassword()).pressLogIn();
     }
 }

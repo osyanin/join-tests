@@ -9,16 +9,16 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
-    protected static SiteConnection siteConnection = SiteConnection.load();
-    protected static User user = new User(siteConnection.user, siteConnection.password);
-    protected static User master = new User(siteConnection.master, siteConnection.password);
+    protected static final SiteConnection siteConnection = SiteConnection.load();
+    protected static final User user = new User(siteConnection.getUser(), siteConnection.getPassword());
+    protected static final User master = new User(siteConnection.getMaster(), siteConnection.getPassword());
 
-    protected SiteVariables vars = SiteVariables.generate();
+    protected final SiteVariables vars = SiteVariables.generate();
 
     @BeforeAll
     public static void setUp() {
 
-        Configuration.baseUrl          = siteConnection.url;
+        Configuration.baseUrl          = siteConnection.getUrl();
         Configuration.browserSize      = "1920x1080";
         Configuration.browser          = System.getProperty("browser");
         Configuration.timeout          = 4000;
