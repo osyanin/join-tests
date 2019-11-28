@@ -87,7 +87,6 @@ gatling {
 tasks.withType(Test) {
     reports.html.enabled = false
     systemProperties = System.properties
-    maxParallelForks = Runtime.runtime.availableProcessors() / 2
     finalizedBy("allureReport")
     useJUnitPlatform {}
 }
